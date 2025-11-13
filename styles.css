@@ -755,3 +755,22 @@ body {
     font-size: 1.6rem;
   }
 }
+.testimonials-more {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.testimonials-more p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.testimonials-more a {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.testimonials-more a:hover {
+  text-decoration: underline;
+}
