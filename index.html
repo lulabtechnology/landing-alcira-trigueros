@@ -21,7 +21,7 @@
   <meta property="og:url" content="https://TU-DOMINIO.com/" />
   -->
 
-  <!-- Favicon (opcional: cuando tengas un PNG pequeño, lo activas)
+  <!-- Favicon (opcional)
   <link rel="icon" href="images/logo-alcira.png" type="image/png" />
   -->
 
@@ -348,7 +348,6 @@
           </article>
         </div>
 
-        <!-- NUEVO: link a más testimonios -->
         <div class="testimonials-more">
           <p>
             Para conocer más testimonios, visita nuestro
@@ -411,6 +410,7 @@
         <div class="contact-form-wrapper">
           <div class="card form-card">
             <h3>Envíame un mensaje</h3>
+            <!-- IMPORTANTE: dejamos action="#" y manejamos el envío con JS para usar mailto -->
             <form class="contact-form" action="#" method="post">
               <div class="form-group">
                 <label for="nombre">Nombre completo</label>
@@ -432,11 +432,11 @@
                 <label for="tipo-consulta">Tipo de consulta</label>
                 <select id="tipo-consulta" name="tipo-consulta" required>
                   <option value="" disabled selected>Selecciona una opción</option>
-                  <option value="inmobiliario">Inmobiliario</option>
-                  <option value="migracion">Migración</option>
-                  <option value="inversiones">Inversiones</option>
-                  <option value="corporativo">Corporativo</option>
-                  <option value="otro">Otro</option>
+                  <option value="Inmobiliario">Inmobiliario</option>
+                  <option value="Migración">Migración</option>
+                  <option value="Inversiones">Inversiones</option>
+                  <option value="Corporativo">Corporativo</option>
+                  <option value="Otro">Otro</option>
                 </select>
               </div>
 
