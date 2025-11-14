@@ -53,4 +53,49 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentYear = new Date().getFullYear();
     yearSpan.textContent = currentYear;
   }
+
+  // --------- ENVÍO DEL FORMULARIO POR MAILTO (SIN 404) ----------
+  const contactForm = document.querySelector(".contact-form");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault(); // Evita recargar la página o hacer POST que termina en 404
+
+      const nombre = document.getElementById("nombre")?.value.trim() || "";
+      const correo = document.getElementById("correo")?.value.trim() || "";
+      const tipoConsulta = document.getElementById("tipo-consulta")?.value || "";
+      const mensaje = document.getElementById("mensaje")?.value.trim() || "";
+
+      // Construimos el cuerpo del correo
+      const subject = "Nueva consulta desde la web - Alcira Trigueros";
+      const bodyLines = [
+        "Has recibido una nueva consulta desde el formulario de la página web:",
+        "",
+        `Nombre: ${nombre}`,
+        `Correo: ${correo}`,
+        `Tipo de consulta: ${tipoConsulta}`,
+        "",
+        "Mensaje:",
+        mensaje,
+        "",
+        "—",
+        "Este mensaje fue generado desde el formulario de contacto del sitio web.",
+      ];
+
+      const body = encodeURIComponent(bodyLines.join("\n"));
+
+      const mailtoLink =
+        "mailto:abogada@alciratrigueroslegalinmobila.com" +
+        "?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        body;
+
+      // Abrimos el cliente de correo del usuario
+      window.location.href = mailtoLink;
+
+      // Opcional: limpiar el formulario después de generar el mailto
+      contactForm.reset();
+    });
+  }
 });
